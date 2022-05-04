@@ -14,6 +14,8 @@ namespace CardDeck
     {
         // deck of cards
         List<string> deck = new List<string>();
+        List<string> dealerCards = new List<string>();
+        List<string> playerCards = new List<string>();
 
         public Form1()
         {
@@ -32,7 +34,13 @@ namespace CardDeck
 
         public void ShowDeck()
         {
+            dealerCardsLabel.Text = "";
+            playerCardsLabel.Text = "";
 
+            for (int i = 0; i < deck.Count; i++)
+            {
+
+            }
         }
 
         private void shuffleButton_Click(object sender, EventArgs e)
@@ -54,12 +62,20 @@ namespace CardDeck
 
         private void dealButton_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < 6 ;i++)
+            {
 
+            }
+
+            ShowDeck();
         }
 
         private void collectButton_Click(object sender, EventArgs e)
         {
+            dealerCardsLabel.Text = "";
+            playerCardsLabel.Text = "";
 
+            ShowDeck();
         }
     }
 }
