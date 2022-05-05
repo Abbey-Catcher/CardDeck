@@ -34,12 +34,11 @@ namespace CardDeck
 
         public void ShowDeck()
         {
-            dealerCardsLabel.Text = "";
-            playerCardsLabel.Text = "";
+            outputLabel.Text = "";
 
             for (int i = 0; i < deck.Count; i++)
             {
-
+                outputLabel.Text += $"{deck[i]}, ";
             }
         }
 
@@ -62,10 +61,20 @@ namespace CardDeck
 
         private void dealButton_Click(object sender, EventArgs e)
         {
+            dealerCardsLabel.Text = "";
+            playerCardsLabel.Text = "";
+            
             for (int i = 0; i < 6 ;i++)
             {
-
+                playerCards.Add(deck[0]);
+                deck.RemoveAt(0);
+                dealerCards.Add(deck[0]);
+                deck.RemoveAt(0);
+                playerCardsLabel.Text += $"{playerCards[i]} ";
+                dealerCardsLabel.Text += $"{dealerCards[i]} ";
             }
+
+            
 
             ShowDeck();
         }
